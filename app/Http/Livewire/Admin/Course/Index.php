@@ -22,7 +22,15 @@ class Index extends Component
 
     public function deleteCourse($course_id)
     {
-        dd($course_id);
         $this->course_id = $course_id;
+    }
+
+    public function destroyCourse()
+    {        
+        $course = Course::find($this->course_id);
+
+        $course->delete();
+
+        session()->flash('message', 'Course deleted');
     }
 }

@@ -1,6 +1,6 @@
 <div>
 
-    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div wire:ignore.self class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
@@ -14,7 +14,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
                 </div>
             </form>
 
@@ -60,7 +60,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-outline-danger btn-icon-text"  wire:click="deleteCourse({{ $course->id }})" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                        <a href="#" class="btn btn-outline-danger btn-icon-text"  wire:click="deleteCourse('{{ $course->id }}')" data-bs-toggle="modal" data-bs-target="#deleteModal">
                                             Remover                         
                                         </a>
                                     </td>
